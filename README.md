@@ -1,2 +1,2 @@
 # CodeConvert
-An encoding conversion tool
+An encoding conversion tool by QT
