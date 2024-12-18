@@ -122,3 +122,8 @@ void MainWindow::on_CB_files_currentIndexChanged(int index)
         nextFile(index);
     }
 }
+
+void MainWindow::on_checkBox_copy_toggled(bool checked)
+{
+    g_transfrom.isNeedBackCopy = checked;
+}

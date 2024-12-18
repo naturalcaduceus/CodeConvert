@@ -25,6 +25,7 @@ private slots:
     void on_BT_fromGBK_clicked();
     void on_BT_skip_clicked();
     void on_CB_files_currentIndexChanged(int index);
+    void on_checkBox_copy_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

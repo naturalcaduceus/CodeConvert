@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="label_5">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 0, 0);</string>
+      </property>
       <property name="text">
        <string>警告：由于是直接覆盖原路径，请做好文件备份！！！</string>
       </property>
@@ -62,6 +65,32 @@
       <item>
        <widget class="QComboBox" name="comboBox"/>
       </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_copy">
+        <property name="text">
+         <string>复制生成备份文件</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
@@ -83,7 +112,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="PTE_readByUTF8"/>
+          <widget class="QPlainTextEdit" name="PTE_readByUTF8">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="BT_fromUTF8">
@@ -111,7 +144,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="PTE_readByGBK"/>
+          <widget class="QPlainTextEdit" name="PTE_readByGBK">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="BT_fromGBK">

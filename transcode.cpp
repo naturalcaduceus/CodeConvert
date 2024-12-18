@@ -5,6 +5,7 @@
 
 TransCode::TransCode()
 {
+    isNeedBackCopy = false;
 }
 
 //单例
@@ -17,12 +18,13 @@ TransCode& TransCode::instance()
 void TransCode::coverGBKtoUTF8(QString filename)
 {
     QFile fileWiter(filename);
+    if(isNeedBackCopy) QFile::copy(filename,QString(filename+".coverbak"));//备份功能-cq20241218
 
     if(!fileWiter.open(QIODevice::ReadWrite|QIODevice::Text|QIODevice::Truncate)){
         //文件打开失败
         return;
     }
-    QTextStream out(&filename);
+    QTextStream out(&fileWiter);//fix bug -cq20241219
     out.setCodec(QTextCodec::codecForName("UTF-8"));
     out.setAutoDetectUnicode(true);
 
@@ -35,12 +37,13 @@ void TransCode::coverGBKtoUTF8(QString filename)
 void TransCode::coverUTF8toGBK(QString filename)
 {
     QFile fileWiter(filename);
+    if(isNeedBackCopy) QFile::copy(filename,QString(filename+".coverbak"));//备份功能-cq20241218
 
     if(!fileWiter.open(QIODevice::ReadWrite|QIODevice::Text|QIODevice::Truncate)){
         //文件打开失败
         return;
     }
-    QTextStream out(&filename);
+    QTextStream out(&fileWiter);//fix bug -cq20241219
     out.setCodec(QTextCodec::codecForName("UTF-8"));
     out.setAutoDetectUnicode(true);
 

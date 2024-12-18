@@ -17,9 +17,11 @@ public:
     QString ReadFromGBK();
     QString ReadFromUTF8();
 
+    bool isNeedBackCopy;
 
 private:
     QByteArray m_contentBYTE;
+
 };
 
 #endif // TRANSCODE_H
